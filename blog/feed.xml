@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Alex Kahn: Explainers</title>
+  <link>https://arkkahn.com/blog/</link>
+  <atom:link href="https://arkkahn.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Short video explainers on AI transformation and natural language analytics.</description>
+  <language>en</language>
+  <item>
+    <title>Why “doing AI” makes your token costs explode</title>
+    <link>https://arkkahn.com/blog/ai-transformation/</link>
+    <guid isPermaLink="true">https://arkkahn.com/blog/ai-transformation/</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 +0000</pubDate>
+    <description>If an organization is just “doing AI,” it throws the best model it can afford at every task and its token costs explode. Every task starts as open-ended exploration and narrows into a predictable, repeatable process. Frontier models are the right tool at the exploration end. Once a task crosses the threshold to scalability, you get better and cheaper results by encoding your organizational context outside the model and running the work on smaller, faster, sometimes deterministic software. AI transformation means tracking where every task sits, so token cost per task goes down over time, not up.</description>
+    <enclosure url="https://arkkahn.com/media/blog/ai-transformation.mp4" type="video/mp4" length="6565341"/>
+  </item>
+  <item>
+    <title>Talking to your data: why natural language analytics needs a semantic layer</title>
+    <link>https://arkkahn.com/blog/natural-language-analytics/</link>
+    <guid isPermaLink="true">https://arkkahn.com/blog/natural-language-analytics/</guid>
+    <pubDate>Thu, 12 Nov 2026 12:00:00 +0000</pubDate>
+    <description>Natural language analytics lets anyone ask a question like “How are bookings trending week over week?” and get an instant answer, chart or forecast. It works easily on one simple dataset. It breaks when you connect datasets, because systems name the same thing differently (account_id in the CRM, sold_to_party in finance) and teams define metrics like revenue differently. No off-the-shelf tool can fix that, because the knowledge is implicit and lives in people’s heads. The fix is a semantic layer: a written definition of your terms, how datasets relate, and your business rules, which then becomes a composable knowledge layer any AI tool can use.</description>
+    <enclosure url="https://arkkahn.com/media/blog/natural-language-analytics.mp4" type="video/mp4" length="6934103"/>
+  </item>
+</channel>
+</rss>

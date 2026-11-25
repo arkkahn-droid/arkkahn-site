@@ -1,0 +1,21 @@
+# Alex Kahn
+
+> Alex Kahn leads AI transformation at Publicis Sapient, redesigning workflows and building technical systems for a 200-person marketing organization. Earlier: founding hire of Condé Nast Entertainment's branded content division, early hire at Good Engine (acquired by Broadway Video), and award-winning writer, director and producer (five Clios, two Webbys).
+
+This site has a short bio and a blog of video explainers. Each blog post is a plain HTML page with a summary, key points and the full transcript. The complete text of every post is in /llms-full.txt.
+
+## Blog posts
+
+- [Why “doing AI” makes your token costs explode](https://arkkahn.com/blog/ai-transformation/): Every task moves from open-ended exploration to a repeatable process. AI transformation means moving each task off frontier models once it crosses that threshold, so token cost per task falls over time instead of exploding.
+- [Talking to your data: why natural language analytics needs a semantic layer](https://arkkahn.com/blog/natural-language-analytics/): We built a tool that lets anyone on the team ask questions of company data in plain English. It only worked once we built a semantic layer that teaches the AI what our terms mean and how our datasets connect.
+
+## About
+
+- [Home and bio](https://arkkahn.com/): Work, background and contact.
+- [LinkedIn](https://www.linkedin.com/in/arkkahn/): Where the videos are first posted.
+
+## Optional
+
+- [Full text of all posts](https://arkkahn.com/llms-full.txt)
+- [RSS feed](https://arkkahn.com/blog/feed.xml)
+- [Sitemap](https://arkkahn.com/sitemap.xml)

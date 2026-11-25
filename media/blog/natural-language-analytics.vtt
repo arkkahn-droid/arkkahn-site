@@ -1,0 +1,153 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.080
+We just built a tool that lets us talk to our data.
+
+2
+00:00:03.080 --> 00:00:05.600
+Anyone on our team can ask a question like,
+
+3
+00:00:05.600 --> 00:00:08.280
+which geographies tend to convert the most leads?
+
+4
+00:00:08.280 --> 00:00:11.400
+Or how are bookings trending week over week?
+
+5
+00:00:11.400 --> 00:00:14.040
+And it'll instantly generate the answer for them.
+
+6
+00:00:14.040 --> 00:00:16.320
+It can make charts and visuals on the fly,
+
+7
+00:00:16.320 --> 00:00:18.840
+and we can even use it to start making predictions
+
+8
+00:00:18.840 --> 00:00:20.960
+based on our historical data.
+
+9
+00:00:20.960 --> 00:00:23.400
+So when ChatGPT first came out,
+
+10
+00:00:23.400 --> 00:00:24.880
+this was one of those use cases
+
+11
+00:00:24.880 --> 00:00:27.360
+that everybody immediately jumped to.
+
+12
+00:00:27.360 --> 00:00:29.000
+And it actually worked pretty well
+
+13
+00:00:29.000 --> 00:00:32.720
+as long as you were working with one relatively simple dataset.
+
+14
+00:00:32.720 --> 00:00:36.280
+The problem comes when you need to start connecting different datasets,
+
+15
+00:00:36.280 --> 00:00:39.280
+which is what pretty much every company needs to do.
+
+16
+00:00:39.280 --> 00:00:42.040
+That's because, for instance, in your CRM,
+
+17
+00:00:42.040 --> 00:00:46.080
+a customer might be referred to by account_id.
+
+18
+00:00:46.080 --> 00:00:47.440
+And in your finance system,
+
+19
+00:00:47.440 --> 00:00:52.160
+that same customer might be called the sold_to_party.
+
+20
+00:00:52.160 --> 00:00:55.320
+It gets even messier when you realize that marketing and finance
+
+21
+00:00:55.320 --> 00:00:58.920
+might have completely different definitions of something like revenue,
+
+22
+00:00:58.960 --> 00:01:01.280
+or what counts as an active customer.
+
+23
+00:01:01.280 --> 00:01:05.520
+The reason a vendor or off-the-shelf tool can't just fix this automatically
+
+24
+00:01:05.520 --> 00:01:08.920
+is that your organization has spent years accumulating knowledge
+
+25
+00:01:08.920 --> 00:01:11.400
+about how to interpret its own data.
+
+26
+00:01:11.400 --> 00:01:14.520
+That's implicit rather than explicit context,
+
+27
+00:01:14.520 --> 00:01:18.760
+and no tool can understand it unless you teach it how to understand it.
+
+28
+00:01:18.760 --> 00:01:20.920
+So we discovered that what we actually needed
+
+29
+00:01:20.920 --> 00:01:23.280
+is something called a semantic layer.
+
+30
+00:01:23.280 --> 00:01:27.360
+Basically, it's a way of teaching the AI what all of our terms mean,
+
+31
+00:01:27.400 --> 00:01:29.760
+how the different datasets relate to each other,
+
+32
+00:01:29.760 --> 00:01:33.000
+and what rules our business uses to calculate things.
+
+33
+00:01:33.000 --> 00:01:35.160
+That's why building natural language analytics
+
+34
+00:01:35.160 --> 00:01:37.880
+took a lot more effort than we first thought it would.
+
+35
+00:01:37.880 --> 00:01:41.640
+We needed the people who keep all of this implicit context in their heads
+
+36
+00:01:41.640 --> 00:01:45.040
+to sit down and define all of it for the machines.
+
+37
+00:01:45.040 --> 00:01:47.200
+The good news is, now that we've done it,
+
+38
+00:01:47.200 --> 00:01:51.200
+we have a composable knowledge layer that any AI tool can tap into.

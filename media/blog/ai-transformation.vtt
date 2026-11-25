@@ -1,0 +1,81 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.880
+If you're just doing AI rather than doing a proper AI transformation,
+
+2
+00:00:04.880 --> 00:00:08.320
+you're going to see your token costs explode. Here's why.
+
+3
+00:00:08.960 --> 00:00:13.920
+Running an innovation team, I've seen firsthand that all problem-solving follows the same
+
+4
+00:00:13.920 --> 00:00:19.280
+basic pattern. You start with a wide range of possibilities, but as you experiment and learn
+
+5
+00:00:19.280 --> 00:00:24.880
+what works, the space gets narrower until something that started as an open-ended exploration
+
+6
+00:00:24.960 --> 00:00:30.080
+becomes a predictable, repeatable process. We've measured this with dozens of teams,
+
+7
+00:00:30.080 --> 00:00:35.040
+and most have somewhere between 50 and 100 distinct tasks they regularly perform.
+
+8
+00:00:35.680 --> 00:00:41.360
+Each of those tasks has its own little triangle. And because workflows are just groups of tasks,
+
+9
+00:00:41.360 --> 00:00:45.680
+roles are just groups of workflows, and teams are just groups of roles,
+
+10
+00:00:45.680 --> 00:00:50.880
+you can call this triangle the general shape of all knowledge work. Frontier models are
+
+11
+00:00:50.880 --> 00:00:56.880
+really good at this end. But once a task crosses to the other end, you need it to be tight, repeatable,
+
+12
+00:00:56.880 --> 00:01:02.240
+and predictable. And frontier models aren't just too expensive for that, they're bad at it.
+
+13
+00:01:02.240 --> 00:01:06.720
+You get better output by encoding your organizational context outside the model,
+
+14
+00:01:06.720 --> 00:01:12.160
+and using smaller, faster, sometimes even more deterministic software to execute on it.
+
+15
+00:01:12.160 --> 00:01:17.680
+If your organization is just doing AI, nobody is keeping track of any of this.
+
+16
+00:01:17.680 --> 00:01:22.400
+You're just taking the same work you do today and throwing the best model you can afford at it.
+
+17
+00:01:22.400 --> 00:01:27.760
+Don't blame IT for capping your token budget. This is your job to manage, not theirs.
+
+18
+00:01:27.760 --> 00:01:33.920
+That's why AI transformation is so different from doing AI. It means knowing where every one of
+
+19
+00:01:33.920 --> 00:01:40.400
+those triangles is, and noticing when each task crosses the threshold from exploration to scalability.
+
+20
+00:01:40.400 --> 00:01:45.120
+If you're doing this right, token cost per task goes down over time, not up.

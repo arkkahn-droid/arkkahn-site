@@ -1,0 +1,114 @@
+# Alex Kahn: Explainers (full text)
+
+> Every blog post on arkkahn.com, with summary, key points and full transcript. Author: Alex Kahn, AI transformation lead at Publicis Sapient.
+
+## Why “doing AI” makes your token costs explode
+
+URL: https://arkkahn.com/blog/ai-transformation/  
+Published: 2026-11-22  
+Video: https://arkkahn.com/media/blog/ai-transformation.mp4 (108 seconds)
+
+### Summary
+
+If an organization is just “doing AI,” it throws the best model it can afford at every task and its token costs explode. Every task starts as open-ended exploration and narrows into a predictable, repeatable process. Frontier models are the right tool at the exploration end. Once a task crosses the threshold to scalability, you get better and cheaper results by encoding your organizational context outside the model and running the work on smaller, faster, sometimes deterministic software. AI transformation means tracking where every task sits, so token cost per task goes down over time, not up.
+
+### Key points
+
+- All problem-solving follows the same shape: wide exploration that narrows into a repeatable process.
+- Most teams perform 50 to 100 distinct tasks. Tasks roll up into workflows, workflows into roles, roles into teams.
+- Frontier models are good at exploration, but too expensive and worse at tight, repeatable work.
+- Encode organizational context outside the model, then execute with smaller, faster, more deterministic software.
+- Managing token spend is the business’s job, not IT’s. Done well, cost per task falls over time.
+
+### Transcript
+
+#### The shape of all problem-solving
+
+If you’re just doing AI rather than doing a proper AI transformation, you’re going to see your token costs explode. Here’s why.
+
+Running an innovation team, I’ve seen firsthand that all problem-solving follows the same basic pattern. You start with a wide range of possibilities, but as you experiment and learn what works, the space gets narrower until something that started as an open-ended exploration becomes a predictable, repeatable process.
+
+[Image: Diagram: possible solutions on the vertical axis, time on the horizontal. Many starting points on the left converge to a single point on the right, forming a triangle labeled Exploration.]
+
+#### Every task has its own triangle
+
+We’ve measured this with dozens of teams, and most have somewhere between 50 and 100 distinct tasks they regularly perform. Each of those tasks has its own little triangle. And because workflows are just groups of tasks, roles are just groups of workflows, and teams are just groups of roles, you can call this triangle the general shape of all knowledge work.
+
+[Image: Diagram: one large triangle made of smaller nested triangles, labeled Task, Workflow, Role and Team, showing tasks rolling up into workflows, roles and teams.]
+
+#### Where frontier models fit, and where they don’t
+
+Frontier models are really good at the wide end. But once a task crosses to the other end, you need it to be tight, repeatable, and predictable. And frontier models aren’t just too expensive for that, they’re bad at it. You get better output by encoding your organizational context outside the model, and using smaller, faster, sometimes even more deterministic software to execute on it.
+
+[Image: Diagram: a triangle running from Exploration on the left to Scalability on the right, split by a red Threshold line. The wide left part is labeled Frontier models; the narrow right tip is labeled Deterministic software, with Organizational context sitting at the threshold.]
+
+#### Why “doing AI” blows the token budget
+
+If your organization is just doing AI, nobody is keeping track of any of this. You’re just taking the same work you do today and throwing the best model you can afford at it. Don’t blame IT for capping your token budget. This is your job to manage, not theirs.
+
+[Image: Chart: token spend curving sharply upward over time until it hits a horizontal line labeled Budget cap.]
+
+#### What AI transformation actually means
+
+That’s why AI transformation is so different from doing AI. It means knowing where every one of those triangles is, and noticing when each task crosses the threshold from exploration to scalability. If you’re doing this right, token cost per task goes down over time, not up.
+
+[Image: Grid of small task triangles above a chart labeled Token cost per task, with a red line sloping downward over time.]
+
+## Talking to your data: why natural language analytics needs a semantic layer
+
+URL: https://arkkahn.com/blog/natural-language-analytics/  
+Published: 2026-11-12  
+Video: https://arkkahn.com/media/blog/natural-language-analytics.mp4 (115 seconds)
+
+### Summary
+
+Natural language analytics lets anyone ask a question like “How are bookings trending week over week?” and get an instant answer, chart or forecast. It works easily on one simple dataset. It breaks when you connect datasets, because systems name the same thing differently (account_id in the CRM, sold_to_party in finance) and teams define metrics like revenue differently. No off-the-shelf tool can fix that, because the knowledge is implicit and lives in people’s heads. The fix is a semantic layer: a written definition of your terms, how datasets relate, and your business rules, which then becomes a composable knowledge layer any AI tool can use.
+
+### Key points
+
+- Asking data questions in plain English works well on one simple dataset.
+- It breaks when you join datasets: the same customer is account_id in the CRM and sold_to_party in finance.
+- Teams also define the same metric differently, like revenue or “active customer.”
+- Vendors can’t fix this automatically, because the knowledge is implicit, not written down.
+- A semantic layer makes it explicit: what terms mean, how datasets relate, and how the business calculates things.
+- Building it takes real effort from the people who hold the context, but the result works with any AI tool.
+
+### Transcript
+
+#### What natural language analytics can do
+
+We just built a tool that lets us talk to our data. Anyone on our team can ask a question like “Which geographies tend to convert the most leads?” or “How are bookings trending week over week?” And it’ll instantly generate the answer for them. It can make charts and visuals on the fly, and we can even use it to start making predictions based on our historical data.
+
+[Image: Screenshot of the natural language analytics tool. The question 'How are bookings trending week over week?' returns a written answer (bookings up 5.7% week over week) and a bar chart of weekly bookings for the last eight weeks.]
+
+#### One dataset is easy. Connecting many is hard.
+
+So, when ChatGPT first came out, this was one of those use cases that everybody immediately jumped to. And it actually worked pretty well, as long as you were working with one relatively simple dataset. The problem comes when you need to start connecting different datasets, which is what pretty much every company needs to do.
+
+[Image: Diagram titled 'Connecting many is hard.' The question 'Which region has the most leads?' points at a CRM leads table, which is linked to separate Finance, Marketing, Product and Support systems.]
+
+That’s because, for instance, in your CRM a customer might be referred to by account_id, and in your finance system that same customer might be called the sold_to_party.
+
+[Image: Diagram titled 'Same customer. Two names.' A CRM accounts table keyed by account_id and a Finance billing table keyed by sold_to_party, with Acme Corp. highlighted in both.]
+
+It gets even messier when you realize that marketing and finance might have completely different definitions of something like revenue, or what counts as an active customer.
+
+[Image: Diagram titled 'Same word. Two meanings.' Marketing revenue is $4.8M (closed-won bookings) while Finance revenue is $4.2M (recognized, net of credits), with a not-equal sign between them.]
+
+#### Why off-the-shelf tools can’t fix it
+
+The reason a vendor or off-the-shelf tool can’t just fix this automatically is that your organization has spent years accumulating knowledge about how to interpret its own data. That’s implicit rather than explicit context, and no tool can understand it unless you teach it how to understand it.
+
+[Image: Diagram titled 'The rules are unwritten.' Examples of implicit context: revenue is net of credits, fiscal year starts in February, partner deals count once, EMEA includes India, test accounts start with ZZ, churned means 90 days inactive. Label: implicit context, never written down. An off-the-shelf tool sits below, unable to see them.]
+
+#### The fix: a semantic layer
+
+So we discovered that what we actually needed is something called a semantic layer. Basically, it’s a way of teaching the AI what all of our terms mean, how the different datasets relate to each other, and what rules our business uses to calculate things.
+
+[Image: Diagram titled 'The semantic layer.' A semantic layer sits between AI above and the CRM, Finance and Marketing systems below. It holds terms (revenue, active customer, booking), relationships (account_id equals sold_to_party, lead to account) and rules (net of credits, partners count once, fiscal year starts in February).]
+
+#### More work than we expected, and worth it
+
+That’s why building natural language analytics took a lot more effort than we first thought it would. We needed the people who keep all of this implicit context in their heads to sit down and define all of it for the machines. The good news is, now that we’ve done it, we have a composable knowledge layer that any AI tool can tap into.
+
+[Image: Diagram titled 'Now any AI tool can use it.' Analytics chat, agents, dashboards and copilots all connect down to one shared semantic layer.]

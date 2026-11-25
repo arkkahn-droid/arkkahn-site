@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/blog.css?v=0126aa82">
+<link rel="preload" href="/assets/fonts/articulat-cf-medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="alternate" type="application/rss+xml" title="Alex Kahn: Explainers" href="/blog/feed.xml">
+<meta name="author" content="Alex Kahn">
+<meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
+<meta name="twitter:card" content="summary_large_image">
+<title>Talking to your data: why natural language analytics needs a semantic layer | Alex Kahn</title>
+<meta name="description" content="We built a tool that lets anyone on the team ask questions of company data in plain English. It only worked once we built a semantic layer that teaches the AI what our terms mean and how our datasets connect.">
+<meta name="keywords" content="natural language analytics, semantic layer, talk to your data, text-to-SQL, AI analytics, data definitions, implicit context">
+<link rel="canonical" href="https://arkkahn.com/blog/natural-language-analytics/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alex Kahn">
+<meta property="og:title" content="Talking to your data: why natural language analytics needs a semantic layer">
+<meta property="og:description" content="We built a tool that lets anyone on the team ask questions of company data in plain English. It only worked once we built a semantic layer that teaches the AI what our terms mean and how our datasets connect.">
+<meta property="og:url" content="https://arkkahn.com/blog/natural-language-analytics/">
+<meta property="og:image" content="https://arkkahn.com/media/blog/natural-language-analytics.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta property="og:video" content="https://arkkahn.com/media/blog/natural-language-analytics.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1080">
+<meta property="og:video:height" content="1080">
+<meta property="article:published_time" content="2026-11-12">
+<meta property="article:author" content="https://arkkahn.com/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "@id": "https://arkkahn.com/blog/natural-language-analytics/#post",
+   "mainEntityOfPage": "https://arkkahn.com/blog/natural-language-analytics/",
+   "url": "https://arkkahn.com/blog/natural-language-analytics/",
+   "headline": "Talking to your data: why natural language analytics needs a semantic layer",
+   "description": "We built a tool that lets anyone on the team ask questions of company data in plain English. It only worked once we built a semantic layer that teaches the AI what our terms mean and how our datasets connect.",
+   "abstract": "Natural language analytics lets anyone ask a question like “How are bookings trending week over week?” and get an instant answer, chart or forecast. It works easily on one simple dataset. It breaks when you connect datasets, because systems name the same thing differently (account_id in the CRM, sold_to_party in finance) and teams define metrics like revenue differently. No off-the-shelf tool can fix that, because the knowledge is implicit and lives in people’s heads. The fix is a semantic layer: a written definition of your terms, how datasets relate, and your business rules, which then becomes a composable knowledge layer any AI tool can use.",
+   "datePublished": "2026-11-12",
+   "dateModified": "2026-11-12",
+   "inLanguage": "en",
+   "author": {
+    "@id": "https://arkkahn.com/#alex-kahn"
+   },
+   "publisher": {
+    "@id": "https://arkkahn.com/#alex-kahn"
+   },
+   "image": [
+    "https://arkkahn.com/media/blog/natural-language-analytics.jpg",
+    "https://arkkahn.com/media/blog/stills/natural-language-analytics-bookings-chart.webp",
+    "https://arkkahn.com/media/blog/stills/natural-language-analytics-connecting.webp",
+    "https://arkkahn.com/media/blog/stills/natural-language-analytics-two-names.webp",
+    "https://arkkahn.com/media/blog/stills/natural-language-analytics-two-meanings.webp",
+    "https://arkkahn.com/media/blog/stills/natural-language-analytics-unwritten-rules.webp",
+    "https://arkkahn.com/media/blog/stills/natural-language-analytics-semantic-layer.webp",
+    "https://arkkahn.com/media/blog/stills/natural-language-analytics-any-ai-tool.webp"
+   ],
+   "keywords": "natural language analytics, semantic layer, talk to your data, text-to-SQL, AI analytics, data definitions, implicit context",
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://arkkahn.com/blog/#blog",
+    "name": "Alex Kahn: Explainers",
+    "url": "https://arkkahn.com/blog/"
+   },
+   "video": {
+    "@id": "https://arkkahn.com/blog/natural-language-analytics/#video"
+   },
+   "articleBody": "Natural language analytics lets anyone ask a question like “How are bookings trending week over week?” and get an instant answer, chart or forecast. It works easily on one simple dataset. It breaks when you connect datasets, because systems name the same thing differently (account_id in the CRM, sold_to_party in finance) and teams define metrics like revenue differently. No off-the-shelf tool can fix that, because the knowledge is implicit and lives in people’s heads. The fix is a semantic layer: a written definition of your terms, how datasets relate, and your business rules, which then becomes a composable knowledge layer any AI tool can use.\n\nWe just built a tool that lets us talk to our data. Anyone on our team can ask a question like “Which geographies tend to convert the most leads?” or “How are bookings trending week over week?” And it’ll instantly generate the answer for them. It can make charts and visuals on the fly, and we can even use it to start making predictions based on our historical data.\n\nSo, when ChatGPT first came out, this was one of those use cases that everybody immediately jumped to. And it actually worked pretty well, as long as you were working with one relatively simple dataset. The problem comes when you need to start connecting different datasets, which is what pretty much every company needs to do.\n\nThat’s because, for instance, in your CRM a customer might be referred to by account_id, and in your finance system that same customer might be called the sold_to_party.\n\nIt gets even messier when you realize that marketing and finance might have completely different definitions of something like revenue, or what counts as an active customer.\n\nThe reason a vendor or off-the-shelf tool can’t just fix this automatically is that your organization has spent years accumulating knowledge about how to interpret its own data. That’s implicit rather than explicit context, and no tool can understand it unless you teach it how to understand it.\n\nSo we discovered that what we actually needed is something called a semantic layer. Basically, it’s a way of teaching the AI what all of our terms mean, how the different datasets relate to each other, and what rules our business uses to calculate things.\n\nThat’s why building natural language analytics took a lot more effort than we first thought it would. We needed the people who keep all of this implicit context in their heads to sit down and define all of it for the machines. The good news is, now that we’ve done it, we have a composable knowledge layer that any AI tool can tap into.",
+   "wordCount": 442
+  },
+  {
+   "@type": "VideoObject",
+   "@id": "https://arkkahn.com/blog/natural-language-analytics/#video",
+   "name": "Talking to your data: why natural language analytics needs a semantic layer",
+   "description": "We built a tool that lets anyone on the team ask questions of company data in plain English. It only worked once we built a semantic layer that teaches the AI what our terms mean and how our datasets connect.",
+   "thumbnailUrl": [
+    "https://arkkahn.com/media/blog/natural-language-analytics.jpg"
+   ],
+   "uploadDate": "2026-11-12",
+   "duration": "PT1M55S",
+   "contentUrl": "https://arkkahn.com/media/blog/natural-language-analytics.mp4",
+   "encodingFormat": "video/mp4",
+   "width": 1080,
+   "height": 1080,
+   "inLanguage": "en",
+   "transcript": "We just built a tool that lets us talk to our data. Anyone on our team can ask a question like “Which geographies tend to convert the most leads?” or “How are bookings trending week over week?” And it’ll instantly generate the answer for them. It can make charts and visuals on the fly, and we can even use it to start making predictions based on our historical data.\n\nSo, when ChatGPT first came out, this was one of those use cases that everybody immediately jumped to. And it actually worked pretty well, as long as you were working with one relatively simple dataset. The problem comes when you need to start connecting different datasets, which is what pretty much every company needs to do.\n\nThat’s because, for instance, in your CRM a customer might be referred to by account_id, and in your finance system that same customer might be called the sold_to_party.\n\nIt gets even messier when you realize that marketing and finance might have completely different definitions of something like revenue, or what counts as an active customer.\n\nThe reason a vendor or off-the-shelf tool can’t just fix this automatically is that your organization has spent years accumulating knowledge about how to interpret its own data. That’s implicit rather than explicit context, and no tool can understand it unless you teach it how to understand it.\n\nSo we discovered that what we actually needed is something called a semantic layer. Basically, it’s a way of teaching the AI what all of our terms mean, how the different datasets relate to each other, and what rules our business uses to calculate things.\n\nThat’s why building natural language analytics took a lot more effort than we first thought it would. We needed the people who keep all of this implicit context in their heads to sit down and define all of it for the machines. The good news is, now that we’ve done it, we have a composable knowledge layer that any AI tool can tap into.",
+   "author": {
+    "@id": "https://arkkahn.com/#alex-kahn"
+   },
+   "caption": {
+    "@type": "MediaObject",
+    "contentUrl": "https://arkkahn.com/media/blog/natural-language-analytics.vtt",
+    "encodingFormat": "text/vtt"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://arkkahn.com/#alex-kahn",
+   "name": "Alex Kahn",
+   "url": "https://arkkahn.com/",
+   "jobTitle": "AI transformation lead",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "Publicis Sapient"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/arkkahn/"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Alex Kahn",
+     "item": "https://arkkahn.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://arkkahn.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Talking to your data: why natural language analytics needs a semantic layer",
+     "item": "https://arkkahn.com/blog/natural-language-analytics/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top">
+  <a class="name" href="/">Alex Kahn</a>
+  <nav aria-label="Main">
+    <a href="/#work">Work</a>
+    <a href="/#about">About</a>
+    <a href="/blog/" aria-current="page">Blog</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+</header>
+<main class="wrap">
+  <article>
+    <p class="label"><a href="/blog/">Blog</a> · <time datetime="2026-11-12">November 12, 2026</time> · 1:55 video</p>
+    <h1>Talking to your data: why natural language analytics needs a semantic layer</h1>
+    <p class="lede">We built a tool that lets anyone on the team ask questions of company data in plain English. It only worked once we built a semantic layer that teaches the AI what our terms mean and how our datasets connect.</p>
+
+    <figure class="video">
+      <video controls playsinline preload="metadata" poster="/media/blog/natural-language-analytics.jpg" width="1080" height="1080">
+      <source src="/media/blog/natural-language-analytics.mp4" type="video/mp4">
+      <track kind="captions" src="/media/blog/natural-language-analytics.vtt" srclang="en" label="English">
+      <a href="/media/blog/natural-language-analytics.mp4">Download the video (MP4)</a>
+      </video>
+    </figure>
+
+    <section class="summary" aria-labelledby="summary">
+      <h2 id="summary" class="label">Summary</h2>
+      <p>Natural language analytics lets anyone ask a question like “How are bookings trending week over week?” and get an instant answer, chart or forecast. It works easily on one simple dataset. It breaks when you connect datasets, because systems name the same thing differently (account_id in the CRM, sold_to_party in finance) and teams define metrics like revenue differently. No off-the-shelf tool can fix that, because the knowledge is implicit and lives in people’s heads. The fix is a semantic layer: a written definition of your terms, how datasets relate, and your business rules, which then becomes a composable knowledge layer any AI tool can use.</p>
+    </section>
+
+    <section aria-labelledby="takeaways">
+      <h2 id="takeaways" class="label">Key points</h2>
+      <ul class="points">
+        <li>Asking data questions in plain English works well on one simple dataset.</li>
+        <li>It breaks when you join datasets: the same customer is account_id in the CRM and sold_to_party in finance.</li>
+        <li>Teams also define the same metric differently, like revenue or “active customer.”</li>
+        <li>Vendors can’t fix this automatically, because the knowledge is implicit, not written down.</li>
+        <li>A semantic layer makes it explicit: what terms mean, how datasets relate, and how the business calculates things.</li>
+        <li>Building it takes real effort from the people who hold the context, but the result works with any AI tool.</li>
+      </ul>
+    </section>
+
+    <section class="transcript" aria-label="Transcript">
+    <h2>What natural language analytics can do</h2>
+    <p>We just built a tool that lets us talk to our data. Anyone on our team can ask a question like “Which geographies tend to convert the most leads?” or “How are bookings trending week over week?” And it’ll instantly generate the answer for them. It can make charts and visuals on the fly, and we can even use it to start making predictions based on our historical data.</p>
+    <figure class="still"><img src="/media/blog/stills/natural-language-analytics-bookings-chart.webp" alt="Screenshot of the natural language analytics tool. The question &#x27;How are bookings trending week over week?&#x27; returns a written answer (bookings up 5.7% week over week) and a bar chart of weekly bookings for the last eight weeks." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <h2>One dataset is easy. Connecting many is hard.</h2>
+    <p>So, when ChatGPT first came out, this was one of those use cases that everybody immediately jumped to. And it actually worked pretty well, as long as you were working with one relatively simple dataset. The problem comes when you need to start connecting different datasets, which is what pretty much every company needs to do.</p>
+    <figure class="still"><img src="/media/blog/stills/natural-language-analytics-connecting.webp" alt="Diagram titled &#x27;Connecting many is hard.&#x27; The question &#x27;Which region has the most leads?&#x27; points at a CRM leads table, which is linked to separate Finance, Marketing, Product and Support systems." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <p>That’s because, for instance, in your CRM a customer might be referred to by account_id, and in your finance system that same customer might be called the sold_to_party.</p>
+    <figure class="still"><img src="/media/blog/stills/natural-language-analytics-two-names.webp" alt="Diagram titled &#x27;Same customer. Two names.&#x27; A CRM accounts table keyed by account_id and a Finance billing table keyed by sold_to_party, with Acme Corp. highlighted in both." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <p>It gets even messier when you realize that marketing and finance might have completely different definitions of something like revenue, or what counts as an active customer.</p>
+    <figure class="still"><img src="/media/blog/stills/natural-language-analytics-two-meanings.webp" alt="Diagram titled &#x27;Same word. Two meanings.&#x27; Marketing revenue is $4.8M (closed-won bookings) while Finance revenue is $4.2M (recognized, net of credits), with a not-equal sign between them." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <h2>Why off-the-shelf tools can’t fix it</h2>
+    <p>The reason a vendor or off-the-shelf tool can’t just fix this automatically is that your organization has spent years accumulating knowledge about how to interpret its own data. That’s implicit rather than explicit context, and no tool can understand it unless you teach it how to understand it.</p>
+    <figure class="still"><img src="/media/blog/stills/natural-language-analytics-unwritten-rules.webp" alt="Diagram titled &#x27;The rules are unwritten.&#x27; Examples of implicit context: revenue is net of credits, fiscal year starts in February, partner deals count once, EMEA includes India, test accounts start with ZZ, churned means 90 days inactive. Label: implicit context, never written down. An off-the-shelf tool sits below, unable to see them." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <h2>The fix: a semantic layer</h2>
+    <p>So we discovered that what we actually needed is something called a semantic layer. Basically, it’s a way of teaching the AI what all of our terms mean, how the different datasets relate to each other, and what rules our business uses to calculate things.</p>
+    <figure class="still"><img src="/media/blog/stills/natural-language-analytics-semantic-layer.webp" alt="Diagram titled &#x27;The semantic layer.&#x27; A semantic layer sits between AI above and the CRM, Finance and Marketing systems below. It holds terms (revenue, active customer, booking), relationships (account_id equals sold_to_party, lead to account) and rules (net of credits, partners count once, fiscal year starts in February)." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <h2>More work than we expected, and worth it</h2>
+    <p>That’s why building natural language analytics took a lot more effort than we first thought it would. We needed the people who keep all of this implicit context in their heads to sit down and define all of it for the machines. The good news is, now that we’ve done it, we have a composable knowledge layer that any AI tool can tap into.</p>
+    <figure class="still"><img src="/media/blog/stills/natural-language-analytics-any-ai-tool.webp" alt="Diagram titled &#x27;Now any AI tool can use it.&#x27; Analytics chat, agents, dashboards and copilots all connect down to one shared semantic layer." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    </section>
+
+    <p class="byline">By <a href="/">Alex Kahn</a>, who leads AI transformation at Publicis Sapient. Follow on <a href="https://www.linkedin.com/in/arkkahn/">LinkedIn</a>.</p>
+  </article>
+  <nav class="pager" aria-label="More posts"><a href="/blog/ai-transformation/"><span class="label">Newer</span>Why “doing AI” makes your token costs explode</a></nav>
+</main>
+<footer class="foot">
+  <span class="label">Alex Kahn</span>
+  <span><a href="https://www.linkedin.com/in/arkkahn/">LinkedIn</a> · <a href="/blog/feed.xml">RSS</a> · <a href="/llms.txt">llms.txt</a></span>
+</footer>
+</body>
+</html>

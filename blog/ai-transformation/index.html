@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/blog.css?v=0126aa82">
+<link rel="preload" href="/assets/fonts/articulat-cf-medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="alternate" type="application/rss+xml" title="Alex Kahn: Explainers" href="/blog/feed.xml">
+<meta name="author" content="Alex Kahn">
+<meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
+<meta name="twitter:card" content="summary_large_image">
+<title>Why “doing AI” makes your token costs explode | Alex Kahn</title>
+<meta name="description" content="Every task moves from open-ended exploration to a repeatable process. AI transformation means moving each task off frontier models once it crosses that threshold, so token cost per task falls over time instead of exploding.">
+<meta name="keywords" content="AI transformation, token costs, frontier models, AI budget, organizational context, knowledge work, LLM cost management">
+<link rel="canonical" href="https://arkkahn.com/blog/ai-transformation/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alex Kahn">
+<meta property="og:title" content="Why “doing AI” makes your token costs explode">
+<meta property="og:description" content="Every task moves from open-ended exploration to a repeatable process. AI transformation means moving each task off frontier models once it crosses that threshold, so token cost per task falls over time instead of exploding.">
+<meta property="og:url" content="https://arkkahn.com/blog/ai-transformation/">
+<meta property="og:image" content="https://arkkahn.com/media/blog/ai-transformation.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta property="og:video" content="https://arkkahn.com/media/blog/ai-transformation.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1080">
+<meta property="og:video:height" content="1080">
+<meta property="article:published_time" content="2026-11-22">
+<meta property="article:author" content="https://arkkahn.com/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "@id": "https://arkkahn.com/blog/ai-transformation/#post",
+   "mainEntityOfPage": "https://arkkahn.com/blog/ai-transformation/",
+   "url": "https://arkkahn.com/blog/ai-transformation/",
+   "headline": "Why “doing AI” makes your token costs explode",
+   "description": "Every task moves from open-ended exploration to a repeatable process. AI transformation means moving each task off frontier models once it crosses that threshold, so token cost per task falls over time instead of exploding.",
+   "abstract": "If an organization is just “doing AI,” it throws the best model it can afford at every task and its token costs explode. Every task starts as open-ended exploration and narrows into a predictable, repeatable process. Frontier models are the right tool at the exploration end. Once a task crosses the threshold to scalability, you get better and cheaper results by encoding your organizational context outside the model and running the work on smaller, faster, sometimes deterministic software. AI transformation means tracking where every task sits, so token cost per task goes down over time, not up.",
+   "datePublished": "2026-11-22",
+   "dateModified": "2026-11-22",
+   "inLanguage": "en",
+   "author": {
+    "@id": "https://arkkahn.com/#alex-kahn"
+   },
+   "publisher": {
+    "@id": "https://arkkahn.com/#alex-kahn"
+   },
+   "image": [
+    "https://arkkahn.com/media/blog/ai-transformation.jpg",
+    "https://arkkahn.com/media/blog/stills/ai-transformation-exploration.webp",
+    "https://arkkahn.com/media/blog/stills/ai-transformation-task-triangle.webp",
+    "https://arkkahn.com/media/blog/stills/ai-transformation-threshold.webp",
+    "https://arkkahn.com/media/blog/stills/ai-transformation-budget-cap.webp",
+    "https://arkkahn.com/media/blog/stills/ai-transformation-cost-per-task.webp"
+   ],
+   "keywords": "AI transformation, token costs, frontier models, AI budget, organizational context, knowledge work, LLM cost management",
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://arkkahn.com/blog/#blog",
+    "name": "Alex Kahn: Explainers",
+    "url": "https://arkkahn.com/blog/"
+   },
+   "video": {
+    "@id": "https://arkkahn.com/blog/ai-transformation/#video"
+   },
+   "articleBody": "If an organization is just “doing AI,” it throws the best model it can afford at every task and its token costs explode. Every task starts as open-ended exploration and narrows into a predictable, repeatable process. Frontier models are the right tool at the exploration end. Once a task crosses the threshold to scalability, you get better and cheaper results by encoding your organizational context outside the model and running the work on smaller, faster, sometimes deterministic software. AI transformation means tracking where every task sits, so token cost per task goes down over time, not up.\n\nIf you’re just doing AI rather than doing a proper AI transformation, you’re going to see your token costs explode. Here’s why.\n\nRunning an innovation team, I’ve seen firsthand that all problem-solving follows the same basic pattern. You start with a wide range of possibilities, but as you experiment and learn what works, the space gets narrower until something that started as an open-ended exploration becomes a predictable, repeatable process.\n\nWe’ve measured this with dozens of teams, and most have somewhere between 50 and 100 distinct tasks they regularly perform. Each of those tasks has its own little triangle. And because workflows are just groups of tasks, roles are just groups of workflows, and teams are just groups of roles, you can call this triangle the general shape of all knowledge work.\n\nFrontier models are really good at the wide end. But once a task crosses to the other end, you need it to be tight, repeatable, and predictable. And frontier models aren’t just too expensive for that, they’re bad at it. You get better output by encoding your organizational context outside the model, and using smaller, faster, sometimes even more deterministic software to execute on it.\n\nIf your organization is just doing AI, nobody is keeping track of any of this. You’re just taking the same work you do today and throwing the best model you can afford at it. Don’t blame IT for capping your token budget. This is your job to manage, not theirs.\n\nThat’s why AI transformation is so different from doing AI. It means knowing where every one of those triangles is, and noticing when each task crosses the threshold from exploration to scalability. If you’re doing this right, token cost per task goes down over time, not up.",
+   "wordCount": 391
+  },
+  {
+   "@type": "VideoObject",
+   "@id": "https://arkkahn.com/blog/ai-transformation/#video",
+   "name": "Why “doing AI” makes your token costs explode",
+   "description": "Every task moves from open-ended exploration to a repeatable process. AI transformation means moving each task off frontier models once it crosses that threshold, so token cost per task falls over time instead of exploding.",
+   "thumbnailUrl": [
+    "https://arkkahn.com/media/blog/ai-transformation.jpg"
+   ],
+   "uploadDate": "2026-11-22",
+   "duration": "PT1M49S",
+   "contentUrl": "https://arkkahn.com/media/blog/ai-transformation.mp4",
+   "encodingFormat": "video/mp4",
+   "width": 1080,
+   "height": 1080,
+   "inLanguage": "en",
+   "transcript": "If you’re just doing AI rather than doing a proper AI transformation, you’re going to see your token costs explode. Here’s why.\n\nRunning an innovation team, I’ve seen firsthand that all problem-solving follows the same basic pattern. You start with a wide range of possibilities, but as you experiment and learn what works, the space gets narrower until something that started as an open-ended exploration becomes a predictable, repeatable process.\n\nWe’ve measured this with dozens of teams, and most have somewhere between 50 and 100 distinct tasks they regularly perform. Each of those tasks has its own little triangle. And because workflows are just groups of tasks, roles are just groups of workflows, and teams are just groups of roles, you can call this triangle the general shape of all knowledge work.\n\nFrontier models are really good at the wide end. But once a task crosses to the other end, you need it to be tight, repeatable, and predictable. And frontier models aren’t just too expensive for that, they’re bad at it. You get better output by encoding your organizational context outside the model, and using smaller, faster, sometimes even more deterministic software to execute on it.\n\nIf your organization is just doing AI, nobody is keeping track of any of this. You’re just taking the same work you do today and throwing the best model you can afford at it. Don’t blame IT for capping your token budget. This is your job to manage, not theirs.\n\nThat’s why AI transformation is so different from doing AI. It means knowing where every one of those triangles is, and noticing when each task crosses the threshold from exploration to scalability. If you’re doing this right, token cost per task goes down over time, not up.",
+   "author": {
+    "@id": "https://arkkahn.com/#alex-kahn"
+   },
+   "caption": {
+    "@type": "MediaObject",
+    "contentUrl": "https://arkkahn.com/media/blog/ai-transformation.vtt",
+    "encodingFormat": "text/vtt"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://arkkahn.com/#alex-kahn",
+   "name": "Alex Kahn",
+   "url": "https://arkkahn.com/",
+   "jobTitle": "AI transformation lead",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "Publicis Sapient"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/arkkahn/"
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Alex Kahn",
+     "item": "https://arkkahn.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://arkkahn.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Why “doing AI” makes your token costs explode",
+     "item": "https://arkkahn.com/blog/ai-transformation/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top">
+  <a class="name" href="/">Alex Kahn</a>
+  <nav aria-label="Main">
+    <a href="/#work">Work</a>
+    <a href="/#about">About</a>
+    <a href="/blog/" aria-current="page">Blog</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+</header>
+<main class="wrap">
+  <article>
+    <p class="label"><a href="/blog/">Blog</a> · <time datetime="2026-11-22">November 22, 2026</time> · 1:48 video</p>
+    <h1>Why “doing AI” makes your token costs explode</h1>
+    <p class="lede">Every task moves from open-ended exploration to a repeatable process. AI transformation means moving each task off frontier models once it crosses that threshold, so token cost per task falls over time instead of exploding.</p>
+
+    <figure class="video">
+      <video controls playsinline preload="metadata" poster="/media/blog/ai-transformation.jpg" width="1080" height="1080">
+      <source src="/media/blog/ai-transformation.mp4" type="video/mp4">
+      <track kind="captions" src="/media/blog/ai-transformation.vtt" srclang="en" label="English">
+      <a href="/media/blog/ai-transformation.mp4">Download the video (MP4)</a>
+      </video>
+    </figure>
+
+    <section class="summary" aria-labelledby="summary">
+      <h2 id="summary" class="label">Summary</h2>
+      <p>If an organization is just “doing AI,” it throws the best model it can afford at every task and its token costs explode. Every task starts as open-ended exploration and narrows into a predictable, repeatable process. Frontier models are the right tool at the exploration end. Once a task crosses the threshold to scalability, you get better and cheaper results by encoding your organizational context outside the model and running the work on smaller, faster, sometimes deterministic software. AI transformation means tracking where every task sits, so token cost per task goes down over time, not up.</p>
+    </section>
+
+    <section aria-labelledby="takeaways">
+      <h2 id="takeaways" class="label">Key points</h2>
+      <ul class="points">
+        <li>All problem-solving follows the same shape: wide exploration that narrows into a repeatable process.</li>
+        <li>Most teams perform 50 to 100 distinct tasks. Tasks roll up into workflows, workflows into roles, roles into teams.</li>
+        <li>Frontier models are good at exploration, but too expensive and worse at tight, repeatable work.</li>
+        <li>Encode organizational context outside the model, then execute with smaller, faster, more deterministic software.</li>
+        <li>Managing token spend is the business’s job, not IT’s. Done well, cost per task falls over time.</li>
+      </ul>
+    </section>
+
+    <section class="transcript" aria-label="Transcript">
+    <h2>The shape of all problem-solving</h2>
+    <p>If you’re just doing AI rather than doing a proper AI transformation, you’re going to see your token costs explode. Here’s why.</p>
+    <p>Running an innovation team, I’ve seen firsthand that all problem-solving follows the same basic pattern. You start with a wide range of possibilities, but as you experiment and learn what works, the space gets narrower until something that started as an open-ended exploration becomes a predictable, repeatable process.</p>
+    <figure class="still"><img src="/media/blog/stills/ai-transformation-exploration.webp" alt="Diagram: possible solutions on the vertical axis, time on the horizontal. Many starting points on the left converge to a single point on the right, forming a triangle labeled Exploration." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <h2>Every task has its own triangle</h2>
+    <p>We’ve measured this with dozens of teams, and most have somewhere between 50 and 100 distinct tasks they regularly perform. Each of those tasks has its own little triangle. And because workflows are just groups of tasks, roles are just groups of workflows, and teams are just groups of roles, you can call this triangle the general shape of all knowledge work.</p>
+    <figure class="still"><img src="/media/blog/stills/ai-transformation-task-triangle.webp" alt="Diagram: one large triangle made of smaller nested triangles, labeled Task, Workflow, Role and Team, showing tasks rolling up into workflows, roles and teams." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <h2>Where frontier models fit, and where they don’t</h2>
+    <p>Frontier models are really good at the wide end. But once a task crosses to the other end, you need it to be tight, repeatable, and predictable. And frontier models aren’t just too expensive for that, they’re bad at it. You get better output by encoding your organizational context outside the model, and using smaller, faster, sometimes even more deterministic software to execute on it.</p>
+    <figure class="still"><img src="/media/blog/stills/ai-transformation-threshold.webp" alt="Diagram: a triangle running from Exploration on the left to Scalability on the right, split by a red Threshold line. The wide left part is labeled Frontier models; the narrow right tip is labeled Deterministic software, with Organizational context sitting at the threshold." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <h2>Why “doing AI” blows the token budget</h2>
+    <p>If your organization is just doing AI, nobody is keeping track of any of this. You’re just taking the same work you do today and throwing the best model you can afford at it. Don’t blame IT for capping your token budget. This is your job to manage, not theirs.</p>
+    <figure class="still"><img src="/media/blog/stills/ai-transformation-budget-cap.webp" alt="Chart: token spend curving sharply upward over time until it hits a horizontal line labeled Budget cap." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    <h2>What AI transformation actually means</h2>
+    <p>That’s why AI transformation is so different from doing AI. It means knowing where every one of those triangles is, and noticing when each task crosses the threshold from exploration to scalability. If you’re doing this right, token cost per task goes down over time, not up.</p>
+    <figure class="still"><img src="/media/blog/stills/ai-transformation-cost-per-task.webp" alt="Grid of small task triangles above a chart labeled Token cost per task, with a red line sloping downward over time." width="1080" height="940" loading="lazy" decoding="async"></figure>
+    </section>
+
+    <p class="byline">By <a href="/">Alex Kahn</a>, who leads AI transformation at Publicis Sapient. Follow on <a href="https://www.linkedin.com/in/arkkahn/">LinkedIn</a>.</p>
+  </article>
+  <nav class="pager" aria-label="More posts"><a href="/blog/natural-language-analytics/"><span class="label">Older</span>Talking to your data: why natural language analytics needs a semantic layer</a></nav>
+</main>
+<footer class="foot">
+  <span class="label">Alex Kahn</span>
+  <span><a href="https://www.linkedin.com/in/arkkahn/">LinkedIn</a> · <a href="/blog/feed.xml">RSS</a> · <a href="/llms.txt">llms.txt</a></span>
+</footer>
+</body>
+</html>

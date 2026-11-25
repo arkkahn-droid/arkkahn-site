@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url><loc>https://arkkahn.com/</loc></url>
+  <url><loc>https://arkkahn.com/blog/</loc><lastmod>2026-11-22</lastmod></url>
+  <url>
+    <loc>https://arkkahn.com/blog/ai-transformation/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://arkkahn.com/media/blog/ai-transformation.jpg</video:thumbnail_loc>
+      <video:title>Why “doing AI” makes your token costs explode</video:title>
+      <video:description>Every task moves from open-ended exploration to a repeatable process. AI transformation means moving each task off frontier models once it crosses that threshold, so token cost per task falls over time instead of exploding.</video:description>
+      <video:content_loc>https://arkkahn.com/media/blog/ai-transformation.mp4</video:content_loc>
+      <video:duration>108</video:duration>
+      <video:publication_date>2026-11-22</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://arkkahn.com/blog/natural-language-analytics/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://arkkahn.com/media/blog/natural-language-analytics.jpg</video:thumbnail_loc>
+      <video:title>Talking to your data: why natural language analytics needs a semantic layer</video:title>
+      <video:description>We built a tool that lets anyone on the team ask questions of company data in plain English. It only worked once we built a semantic layer that teaches the AI what our terms mean and how our datasets connect.</video:description>
+      <video:content_loc>https://arkkahn.com/media/blog/natural-language-analytics.mp4</video:content_loc>
+      <video:duration>115</video:duration>
+      <video:publication_date>2026-11-12</video:publication_date>
+    </video:video>
+  </url>
+</urlset>
